@@ -1,0 +1,132 @@
+:root {
+  --bg: #1b1f26;
+  --panel: rgba(12, 15, 20, 0.86);
+  --border: #5f748c;
+  --text: #e9eff6;
+  --accent: #76d081;
+  --danger: #df5d5d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #2a3442, #151820 65%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#gameContainer {
+  position: relative;
+  width: 960px;
+  max-width: calc(100vw - 24px);
+}
+
+#gameCanvas {
+  width: 100%;
+  border: 2px solid #0d1218;
+  background: #172029;
+  image-rendering: pixelated;
+}
+
+.panel {
+  position: absolute;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  backdrop-filter: blur(1px);
+}
+
+.hidden {
+  display: none;
+}
+
+#hud {
+  top: 10px;
+  left: 10px;
+  min-width: 240px;
+}
+
+.hud-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+#healthBar {
+  width: 120px;
+  height: 14px;
+  background: #3b4552;
+  border: 1px solid #1d242d;
+}
+
+#healthFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--danger), #ffb067);
+}
+
+#minimap {
+  top: 10px;
+  right: 10px;
+}
+
+#minimapCanvas {
+  display: block;
+  border: 1px solid #273341;
+  background: #0c1218;
+}
+
+#dialogueBox {
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  width: min(92%, 560px);
+}
+
+#dialogueSpeaker {
+  color: var(--accent);
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+#inventoryPanel,
+#pauseMenu {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 440px);
+  z-index: 2;
+}
+
+#inventoryPanel ul {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#inventoryPanel li {
+  padding: 7px;
+  margin-bottom: 4px;
+  background: #1f2b37;
+  border: 1px solid #34465a;
+  cursor: pointer;
+}
+
+#inventoryPanel li:hover {
+  background: #2a3a4d;
+}
+
+#help {
+  left: 10px;
+  bottom: 10px;
+}
