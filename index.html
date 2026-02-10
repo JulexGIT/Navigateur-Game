@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG Open World 2D</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="gameContainer">
+      <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+      <div id="hud" class="panel">
+        <div class="hud-row">
+          <span>Zone :</span>
+          <strong id="zoneName">-</strong>
+        </div>
+        <div class="hud-row">
+          <span>Vie :</span>
+          <div id="healthBar"><div id="healthFill"></div></div>
+          <span id="healthText">0 / 0</span>
+        </div>
+      </div>
+
+      <div id="minimap" class="panel">
+        <canvas id="minimapCanvas" width="180" height="120"></canvas>
+      </div>
+
+      <div id="dialogueBox" class="panel hidden">
+        <div id="dialogueSpeaker"></div>
+        <div id="dialogueText"></div>
+      </div>
+
+      <div id="inventoryPanel" class="panel hidden">
+        <h2>Inventaire (I)</h2>
+        <ul id="inventoryList"></ul>
+        <p>Cliquer sur un objet pour l'utiliser.</p>
+      </div>
+
+      <div id="pauseMenu" class="panel hidden">
+        <h2>Pause</h2>
+        <p>Échap pour reprendre</p>
+        <p>Déplacements AZERTY : ZQSD / Shift courir / E interagir / F attaquer / I inventaire</p>
+      </div>
+
+      <div id="help" class="panel">
+        <small>ZQSD bouger · Shift courir · E interagir · F attaquer · I inventaire · Échap pause</small>
+      </div>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
